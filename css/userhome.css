@@ -1,0 +1,100 @@
+.context-menu {
+  display:none;
+  position: absolute;
+  z-index: 10;
+  background-color: #23272A;
+}
+
+.context-menu--active {
+  display: block;
+}
+
+.context-menu__item {
+}
+
+.context-menu__item a {
+  max-width: 100%;
+  margin: auto;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  max-width: 80%;
+  margin: auto;
+  /* margin: auto; */
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  z-index: 0;
+  bottom: 30px;
+  display: table-caption;
+}
+
+#snackbartop {
+  visibility: hidden;
+  min-width: 250px;
+  /* margin: auto; */
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  z-index: 0;
+  top: 30px;
+  display: table-caption;
+}
+
+#snackbar.notify {
+  visibility: visible;
+  /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbartop.notify {
+  visibility: visible;
+  /* Show the snackbar */
+  -webkit-animation: fadein-top 0.5s, fadeout-top 0.5s 2.5s;
+  animation: fadein-top 0.5s, fadeout-top 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+
+@-webkit-keyframes fadein {
+  from {bottom: 0;opacity: 0;}
+  to {bottom: 30px;opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0;opacity: 0;}
+  to {bottom: 30px;opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px;opacity: 1;}
+  to {bottom: 0;opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px;opacity: 1;}
+  to {bottom: 0;opacity: 0;}
+}
+
+@-webkit-keyframes fadein-top {
+  from {top: 0;opacity: 0;}
+  to {top: 30px;opacity: 1;}
+}
+
+@keyframes fadein-top {
+  from {top: 0;opacity: 0;}
+  to {top: 30px;opacity: 1;}
+}
+
+@-webkit-keyframes fadeout-top {
+  from {top: 30px;opacity: 1;}
+  to {top: 0;opacity: 0;}
+}
+
+@keyframes fadeout-top {
+  from {top: 30px;opacity: 1;}
+  to {top: 0;opacity: 0;}
+}

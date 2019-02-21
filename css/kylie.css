@@ -1,0 +1,264 @@
+/**************
+    Stories
+**************/
+
+/*****************
+    Kylie's Note
+******************/
+
+    #Flowers {
+
+        margin: 0 15%;
+        padding-bottom: 15%;
+        
+        background-color: transparent;
+        border: none;
+
+    }
+
+    #Flowers .accordion {
+        
+        background-color: #111;
+        color: white;
+
+        border-radius: 5px;
+        border: thin solid #111;
+
+        width: 100%;
+        margin: 0;
+
+    }
+
+    #flowers_acc_button_red:hover, .active#flowers_acc_button_red {background-color: darkred;}
+    #flowers_acc_button_blue:hover, .active#flowers_acc_button_blue {background-color: slateblue;}
+    #flowers_acc_button_yellow:hover, .active#flowers_acc_button_yellow {background-color: rgb(255, 238, 0); color: black;}
+    #flowers_acc_button_green:hover, .active#flowers_acc_button_green{background-color: rgb(157, 255, 0); color: black;}
+    #flowers_acc_button_white:hover, .active#flowers_acc_button_white{background-color: white; color: black;}
+    #flowers_acc_button_purple:hover, .active#flowers_acc_button_purple {background-color: rgb(141, 9, 141);}
+    #flowers_acc_button_final:hover, .active#flowers_acc_button_final {background-color: salmon;}
+
+    #Flowers div.panel {
+
+        background-color: white;
+        word-spacing: 3px;
+        border: inherit;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: 1s ease-out;
+    }
+
+    #flowers div.panel_active {
+        
+        height: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        background-color: white;
+        word-spacing: 3px;
+        border: inherit;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: 1s ease-out;
+
+    }
+
+    p.flowers_p:first-line {
+        
+        margin-left: 10px;
+    }
+
+    p.flowers_p {
+        line-height: 35px;
+        font-size: 28px;
+        margin: 10px;
+        font-family: 'Great Vibes';
+    }
+
+#flowers_change_font {
+  
+}
+/**************
+    3 Column 
+**************/
+    div.col3 > div.row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    div.col3 > div.row > div.column {
+
+        display: table;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        opacity: 1;
+        border-radius: 5px;
+        float: left;
+        width: 100%;
+        margin-right: 3%;
+        margin-bottom: 6px;
+        padding: 10px;
+
+        animation-name: home3ColumnsLoad;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.26, -0.08, 0.31, 0.98);
+        animation-iteration-count: 1;
+
+    }
+
+    div.col3 > div.row {
+
+        animation-name: home3ColumnsLoad;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.26, -0.08, 0.31, 0.98);
+        animation-iteration-count: 1;
+
+    }
+    div.col3 > div.row:first-child {animation-delay: 400ms;}
+    div.col3 > div.row:nth-child(2) {animation-delay: 200ms;}
+    div.col3 > div.row:nth-child(3) {animation-delay: 0ms;}
+
+
+    div.col3 > div.row > div.column h1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 400%;
+        margin: 0;
+        cursor: default;
+    }
+
+    div.col3 > div.row > div.column h3 {
+        font-family: Helvetica;
+        margin: 0;
+        cursor: default;
+    }
+
+    div.row {
+        margin-bottom: 35px;
+    }
+
+    div.row > .column {
+        width: 50%;
+    }
+
+    #new_story_div .column {
+        display: table;
+        float: left;
+        width: 47%;
+        padding: 10px;
+    }
+
+    #new_story_div .column * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #moviesUlWatched li {
+        text-decoration: line-through;
+    }
+
+    div#moviesList {
+        color: black;
+        font-size: 18px;
+        opacity: 1;
+
+        overflow: hidden;
+    }
+
+    /* .cContent {
+        transition: 1s;
+    } */
+/****************
+    Notes Modal
+*****************/
+    #notesModalDiv {
+        z-index: 1;
+
+        display: block;
+        position: fixed;
+        height: 150px;
+        width: 40%;
+
+        padding: 0;
+        margin: 0;
+        margin-top: 15%;
+    }
+
+    #notesModalHeader {
+        background-color: rgb(82, 185, 84);
+
+        margin-bottom: 5px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    #notesModalHeader span {
+        color: white;
+        
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+
+    #notesModalHeader h3 {
+        color: white;
+        
+        font-family: fantasy;
+    }
+    #notesModalCloseBtn {
+        font-size: 36px;
+        float: right;
+        background: none;
+        border: none;
+        color: white;
+        padding: 0;
+        margin: 10px 20px 10px 10px;
+
+        transition: 1s;
+
+        cursor: pointer;
+    }
+
+    #notesModalCloseBtn:hover {
+        color: red;
+    }
+
+    #notesModalCloseBtn:active, #notesModalCloseBtn:focus {
+        border: none;
+        outline: none;
+    }
+
+    #notesModalContent {
+        background-color: #fff;
+
+        margin: 0;
+        padding: 0;
+        border: none;
+
+        width: 100%;
+    }
+
+/**************
+    Keyframes
+***************/
+    @keyframes home3ColumnsLoad {
+        from {transform: translateY(-10em); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+/************
+    @Media
+************/
+    @media screen and (max-width: 450px) {
+        .story_div {
+            margin: 0;
+        }
+        .story_div .s_read_link {
+            font-size: 18px;
+        }
+    }
+

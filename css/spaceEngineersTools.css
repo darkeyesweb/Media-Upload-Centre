@@ -1,0 +1,318 @@
+.SET_tab {
+  width: 75%;
+  padding: 10px 5%;
+  margin: 0px;
+  background-color: white;
+}
+
+#SpaceEngineersTools {
+  background-color: transparent;
+  border: none;
+}
+
+#SpaceEngineersTools input[type='file'], #SpaceEngineersTools input[type='text'] {
+  border: 2px dashed #00aad1;
+  padding: 10px;
+  width: 45%;
+  left: 50%;
+  min-width: 45%;
+  font-size: 18px;
+  transition: 1s linear;
+}
+
+#SESaveSettingsScreen input[type='text'] {
+  border: 1px dashed grey;
+  padding: 4px 10px;
+  width: 45%;
+  left: 50%;
+  min-width: 45%;
+  font-size: 18px;
+  transition: 1s linear;
+}
+
+#SESaveSettingsForm {
+  width: 130%;
+}
+
+#SESaveSettingsScreen {
+  display: block;
+  margin: 0px;
+  padding: 5% 5%;
+}
+
+#SESaveSettingsScreen #SESaveSettingsForm select {
+  border: 1px dashed grey;
+  padding: 4px 10px;
+  height: 5%;
+}
+
+#SESaveSettingsScreen span {
+  margin-right: 1vw;
+}
+
+#SESaveSettingsScreen label {
+  font-size: 18px;
+  font-family: helvetica;
+  margin-left: 15px;
+}
+
+#SEfileUploadScreen label {
+  font-size: 18px;
+}
+
+#SESaveSettingsScreen legend {
+  font-size: 40px;
+}
+
+#SESaveSettingsScreen fieldset > div > fieldset > legend {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+#SESaveSettingsScreen input[type="number"] {
+  width: 75px;
+  border: 1px dashed grey;
+}
+
+/* #SESaveSettingsScreen input[type="checkbox"] {
+  vertical-align: text-bottom;
+  border: 1px dashed grey;
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+} */
+
+#SEToolkit {
+  margin-left: 12.5%;
+  padding-top: 0;
+}
+
+#SEToolkit label {
+  display: inline-block;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #00aad1;
+  color: white;
+  display: none;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  margin-top: 0;
+  font-size: 17px;
+  width: 45%;
+
+  transition: all 0.4s ease;
+}
+
+.tablink:hover {
+  background-color: rgb(0, 83, 116);
+}
+
+.tabcontent.active {
+  background-color: white;
+  color: #00aad1;
+}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  display: none;
+}
+
+
+#SpaceEngineersTools .formSubmit {
+  border: 2px solid #00aad1;
+  background-color: white;
+  color: #00aad1;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.6s ease-in-out;
+}
+
+#SpaceEngineersTools .formSubmit:hover {
+  background-color: #00aad1;
+  color: white;
+}
+
+#SpaceEngineersTools #SEFileSelectionScreenSubmit.formSubmit:disabled {
+  border: 2px dashed grey;
+  background-color: transparent;
+  color: grey;
+}
+
+#SpaceEngineersTools .formSubmitGrn {
+  border: 2px solid limegreen;
+  background-color: white;
+  color: limegreen;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.6s ease-in-out;
+}
+
+#SpaceEngineersTools .formSubmitGrn:hover {
+  background-color: limegreen;
+  color: white;
+}
+
+#SpaceEngineersTools select {
+  /* border: 2px dashed #00aad1; */
+  padding: 10px;
+  width: 45%;
+  left: 50%;
+  font-size: 18px;
+  transition: 1s linear;
+}
+
+#SpaceEngineersTools iframe {
+  border: none;
+  margin: none;
+  width: 100%;
+  height: 100%;
+}
+
+#SEToolboxScreen #modIdText {
+  width:  100%;
+  height:  45vh;
+  max-height: 45vh;
+  border: 4px dashed #00aad1;
+  border-radius:  10px;
+  overflow: scroll;
+  padding: 5px;
+  margin:  5px;
+  font-family:  monospace;
+}
+
+#SpaceEngineersTools svg {
+  width: 100px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+#SpaceEngineersTools .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+#SpaceEngineersTools .path.circle {
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+
+#SpaceEngineersTools .path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+
+#SpaceEngineersTools .path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+
+#SpaceEngineersTools p {
+  text-align: center;
+  margin: 20px 0 60px;
+  font-size: 1.25em;
+}
+
+#SpaceEngineersTools.success p {
+  color: #00aad1;
+}
+
+#SpaceEngineersTools.error p {
+  color: #D06079;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input[type='checkbox']:checked + .slider {
+  background-color: #444;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

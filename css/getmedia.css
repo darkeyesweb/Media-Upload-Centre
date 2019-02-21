@@ -1,0 +1,40 @@
+#mediaTable tr {
+    font-size: 18px;
+    /*! padding: 200px; */
+    /*! height: 40px; */
+}
+
+#mediaTable td {
+    border-top: thin solid rgba(200,200,200,200);
+    padding: 12px 0;
+    text-indent: 10px;
+    font-family: 'helvetica';
+    color: rgb(75,75,75);
+    
+}
+
+#mediaTable td a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    padding: 8px 22px;
+    margin-right: 5px;
+    border-radius: 5px;
+    
+    transition: all 400ms ease;
+}
+
+#mediaTable td a:hover {background-color: blue;}
+#mediaTable td > a.shareUserReady {background-color: #0bdb4f;}
+#mediaTable td > a.shareUserReady:hover {background-color: #069b4e;}
+#mediaTable td > a.deleteAction {background-color: red;}
+#mediaTable td > a.deleteAction:hover {background-color: darkred;}
+select {width: 150px;}
+
+img {
+  width: 175px;
+  height: 175px;
+  padding: 2px;
+  border-radius: 10px;
+}

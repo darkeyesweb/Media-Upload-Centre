@@ -1,0 +1,60 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding: 24px;
+    color: white;
+    background-color: #1f201c;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer {
+    width: 800px;
+    height: 100%;
+    max-height: 600px;
+    padding: 24px;
+    background-color: white;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    background-color: grey;
+    background: linear-gradient(to bottom, #50A7C2 0%, #B7F8DB 100%);
+}
+
+.burger {
+    z-index: 3;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    background-color: #1f201c;
+    border: none;
+    outline: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.isNavOpen {
+    overflow: hidden;
+}
