@@ -16,14 +16,17 @@ use Aws\CognitoIdentity\CognitoIdentityClient;
 
 function stitchChunks() {
     $filename = $_FILES['file']['name'];
+		$key = str_replace("+", "", str_replace("/", "", str_replace("==", "", base64_encode(random_bytes(6)))));
     $category = $_POST['category'];
     @mkdir("M:/Pisscord/$category/");
+		if (file_exists("M:/Pisscord/$category/$filename")) {file_put_contents("M:/Pisscord/$category/$filename", null);}
     for ($i = 0; $i < $_POST["dztotalchunkcount"]; $i++) {
-        file_put_contents("M:/Pisscord/$category/$filename", file_get_contents("M:/Pisscord/chunks/$filename.$i"), FILE_APPEND);
-        unlink("M:/Pisscord/chunks/$filename.$i");
+      file_put_contents("M:/Pisscord/$category/$filename", file_get_contents("M:/Pisscord/chunks/$filename.$i"), FILE_APPEND);
+      unlink("M:/Pisscord/chunks/$filename.$i");
     }
 
     sleep(1);
+		return $key;
 }
 
 function formatSize(int $size) {
@@ -70,9 +73,10 @@ if (!empty($_FILES)) {
         move_uploaded_file($_FILES['file']['tmp_name'], "M:/Pisscord/chunks/$filename.$ci");
         $l->newUpload("$un has uploaded chunk $ci");
         if ($_POST["dzchunkindex"] == $_POST["dztotalchunkcount"]-1) {
-            stitchChunks();
+					
+            $key = stitchChunks();
             $l->newUpload($un."'s upload has been stitched");
-            $upload = tryUpload($filename);
+            $upload = tryUpload("$filename", $key);
              if ($upload === true) {
                  die("Item Uploaded");
              } else {
@@ -80,7 +84,8 @@ if (!empty($_FILES)) {
              }
         }
     } else {
-        move_uploaded_file($_FILES['file']['tmp_name'], "M:/Pisscord/$category/$filename");
+				$key = str_replace("+", "", str_replace("/", "", str_replace("==", "", base64_encode(random_bytes(6)))));
+        move_uploaded_file($_FILES['file']['tmp_name'], "M:/Pisscord/$category/$filename-$key");
         $l->newUpload("$un has uploaded a new file: 
     Filename: ".$f["name"]."
     Filesize: ".$f["size"]."
@@ -88,7 +93,7 @@ if (!empty($_FILES)) {
     Description: ".$p["description"]."
     Uploader: $un
     Category: ".$p["category"]);
-        $upload = tryUpload($filename);
+        $upload = tryUpload("$filename", $key);
         if ($upload === true) {
             die("Item Uploaded");
         } else {
@@ -99,7 +104,7 @@ if (!empty($_FILES)) {
 }
 
 
-function tryUpload($filename) {
+function tryUpload($filename, $key) {
     $channels = array();
     $channels["videos-f"] = "526156546955280405";
     $channels["videos-m"] = "526157752066637835";
@@ -116,12 +121,11 @@ function tryUpload($filename) {
     $fileext = strtolower(array_reverse(explode(".", $filename))[0]);
     $fn = urlencode($filename);
     $fs = urlencode(formatSize(filesize("M:/Pisscord/$category/$filename")));
-    $key = str_replace("+", "", str_replace("/", "", str_replace("==", "", base64_encode(random_bytes(6)))));
     $formatname ="$key.$fileext";
 
     $keyname = "$category/$formatname";
 
-    $l->newlog(shell_exec("ffmpeg -i \"M:/Pisscord/$category/$filename\" -vf \"thumbnail\" -frames:v 120 \"M:/Pisscord/thumbnails/$key.png\""));
+    //shell_exec("ffmpeg -i \"M:/Pisscord/$category/$filename\" -vf \"thumbnail\" -frames:v 120 \"M:/Pisscord/thumbnails/$key.png\"");
     $s3 = new S3Client([
         'version' => 'latest',
         'region' => 'us-east-1',
